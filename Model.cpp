@@ -4,7 +4,7 @@
 using namespace std;
 
 Model::Model() : grid(5, vector<color>(5, blank)) {
-        srand(time(NULL));
+    srand(time(NULL));
     for (int i = 0; i < grid.size(); ++i) {
         for (int j = 0; j < grid[i].size(); ++j) {
             grid[i][j] = color((rand() % 3)+1);
@@ -31,7 +31,7 @@ vector<vector<color>> Model::getGrid() {
 
 void Model::drop(){
     for(int j = 0; j < grid[0].size(); ++j){
-    int width = grid.size();
+        int width = grid.size();
         int height = grid[0].size();
 
         for (int col = 0; col < width; ++col) {
