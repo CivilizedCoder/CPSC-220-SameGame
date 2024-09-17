@@ -30,23 +30,20 @@ vector<vector<color>> Model::getGrid() {
 
 
 void Model::drop(){
-int blankLoc = 100;
-int solidLoc = 100;
+    for(int j = 0; j < grid[0].size(); ++j){
+    int width = grid.size();
+        int height = grid[0].size();
 
-for(int j = 0; j < grid[0].size(); ++j){
-int width = grid.size();
-    int height = grid[0].size();
-
-    for (int col = 0; col < width; ++col) {
-        int emptyRow = height - 1;
-        for (int row = height - 1; row >= 0; --row) {
-            if (grid[row][col] != blank) {
-                swap(grid[row][col], grid[emptyRow][col]);
-                --emptyRow;
+        for (int col = 0; col < width; ++col) {
+            int emptyRow = height - 1;
+            for (int row = height - 1; row >= 0; --row) {
+                if (grid[row][col] != blank) {
+                    swap(grid[row][col], grid[emptyRow][col]);
+                    --emptyRow;
+                }
             }
         }
     }
-}
 }
 
 void Model::select(int x, int y) {
